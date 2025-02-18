@@ -6,7 +6,12 @@ export default function IncDecCounter(){
             setCounterNumber((prev)=>prev+1); 
         }
         else if(eventType == "decrement"){
-            setCounterNumber((prev)=>prev-1);
+            if(counterNumber>0){
+                setCounterNumber((prev)=>prev-1);
+            }
+            else{
+                alert("Counter can not be less than 0")
+            }
         }
     }
     return(
